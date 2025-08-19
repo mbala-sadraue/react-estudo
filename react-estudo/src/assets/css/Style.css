@@ -11,3 +11,12 @@
 .darkgreen{
     color: purple;
 }
+
+/* .with-400{
+
+    width: 400px;
+    margin: 0 au;
+} */
+ #root{
+    margin:  0 auto;
+ }
