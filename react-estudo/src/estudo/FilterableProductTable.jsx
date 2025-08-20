@@ -13,12 +13,11 @@ function FilterableProdutTable() {
         { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
     ]
 
-    const [filterText, setFilterText] = useState('procurar 2')
+    const [filterText, setFilterText] = useState('')
     const [inStockOnly, setInStockOnly] = useState(false)
     function onFilterTextChange(value) {
         setFilterText(value)
-        console.log(value);
-        
+
     }
     return (
         <>
@@ -33,10 +32,6 @@ function FilterableProdutTable() {
 function ProductTable({ products, filterText, inStockOnly }) {
     let rows = []
     let lastCategory = null;
-
-
-    console.log(filterText);
-    
 
     products.forEach(
         (product) => {
