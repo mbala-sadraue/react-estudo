@@ -12,5 +12,5 @@ export default function  Card(){
 export  function MyButton(props) {
 
     console.log(props);
-    return <button style={{color:'white',backgroundColor:'red'}}> {props.children}✅ </button>
+    return <button style={{color:'white',backgroundColor:'red'}}> <del>{props.children}✅</del> </button>
 }
