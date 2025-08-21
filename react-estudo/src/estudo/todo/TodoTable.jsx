@@ -1,9 +1,9 @@
 import TodoItem from './TodoItem.jsx'
-
+import { v4 as uuid4 } from 'uuid'
 export default  function TodoTable(props) {
 
     let todoList = props.todos.map(
-        (todo) => <TodoItem todo={todo}  key={todo.id} onClickTodoItem={props.onClickTodoItem}  />
+        (todo) => <TodoItem todo={todo}  key={uuid4()} onClickTodoItem={props.onClickTodoItem}  />
     )
     return(
      <table>
