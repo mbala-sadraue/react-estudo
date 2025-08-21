@@ -2,6 +2,7 @@ import TodoTable from './TodoTable.jsx'
 import {todosData} from './data.js'
 
 import { useState } from 'react'
+import TodoAddForm from "./TodoAddForm.jsx";
 
 
 export  default function  TodoApp() {
@@ -21,5 +22,28 @@ export  default function  TodoApp() {
           )
         setTodos(newTodos)
     }
-    return  <TodoTable todos = { todos} onClickTodoItem={onClickTodoItem} />;
+
+
+    function onSubmitForm(title){
+
+
+            const newTodo = {
+                id: title,
+                title: title,
+                completed: false,
+                completed_at:  new Date()
+            }
+
+
+        setTodos([...todos,newTodo])
+
+    }
+
+    return (
+        <div>
+            <TodoAddForm onSubmitForm={onSubmitForm}/>
+            <TodoTable todos = { todos} onClickTodoItem={onClickTodoItem} />
+
+        </div>
+    )
 }
