@@ -4,6 +4,7 @@ import FilterableProdutTable from './estudo/FilterableProductTable';
 import './assets/css/Style.css';
 import  Card, { MyButton} from './estudo/desenolver_ui.jsx'
 import TodoApp from "./estudo/todo/TodoApp.jsx";
+import AddInteractivity from "./estudo/adicionar_interatividade.jsx";
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
             <MyButton option={{disabled:'Ola', des:'teste'}}> clicque </MyButton>
 */}
 
-        <TodoApp />
+        {/*<TodoApp />*/}
+        <AddInteractivity/>
     </div>
   )
 }
