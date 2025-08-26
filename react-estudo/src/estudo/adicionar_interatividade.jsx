@@ -22,7 +22,9 @@ const AddInteractivity  = () => {
        console.log(numero)
 
     }
-
+    var a  ='ola';
+    console.log("O valor de a é:  " + a.concat(' ','Ola')); // saída "O valor de a é undefined"
+    // console.log("O */valor de b é " + b )
     return (<div onPointerMove={(e) =>  setPosition({x:e.clientX,y:e.clientY})}>
             <h3>{numero}</h3>
             <div style={{backgroundColor:'red',position:'absolute',left:-10,top:-10, width:'20px',height:'20px', borderRadius:100, transform:` translate(${position.x}px,${position.y}px)`}}>
