@@ -21,11 +21,9 @@ const FeedApp  = () => {
         ).then( (result) => {
             console.log(result)
         }).finally(() => setLoading(false))*/
-
-
-
     },[resourceType])
 
+    useEffect(() => {}, []);
     return (
         <div>
             <h2> Feed App</h2>
