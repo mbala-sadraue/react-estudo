@@ -5,6 +5,7 @@ import './assets/css/Style.css';
 import  Card, { MyButton} from './estudo/desenolver_ui.jsx'
 import TodoApp from "./estudo/todo/TodoApp.jsx";
 import AddInteractivity from "./estudo/adicionar_interatividade.jsx";
+import FeedApp from "./estudo/hooks/UseEffect.jsx";
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
 */}
 
         {/*<TodoApp />*/}
-        <AddInteractivity/>
+        {/*<AddInteractivity/>*/}
+
+        <FeedApp />
     </div>
   )
 }
