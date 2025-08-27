@@ -8,22 +8,22 @@ const FeedApp  = () => {
     const changeSetResourceType  = (resourceType) => {
         setResourceType(resourceType)
     }
-    useEffect( function(){
+    useEffect(  () => {
         setLoading(true)
-        fetch(`https://jsonplaceholder.typicode.com/${resourceType}`).then(
+        const fetchData =  async () =>{
+           const response =  await fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+            console.log(await response.json())
+            setLoading(false)
+        }
+          fetchData()
+        /*fetch(`https://jsonplaceholder.typicode.com/${resourceType}`).then(
             (result) => result.json()
         ).then( (result) => {
             console.log(result)
-        }).finally(
-            function () {
-
-                setLoading(false);
-
-        }
-        )
+        }).finally(() => setLoading(false))*/
 
 
-        console.log(resourceType)
+
     },[resourceType])
 
     return (
