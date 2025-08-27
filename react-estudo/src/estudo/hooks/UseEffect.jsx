@@ -3,12 +3,25 @@ import {useState, useEffect} from "react";
 
 const FeedApp  = () => {
 
-    const  [resourceType, setResourceType] = useState('post')
-    const [loading, setLoading] = useState(true);
+    const  [resourceType, setResourceType] = useState('posts')
+    const [loading, setLoading] = useState(false);
     const changeSetResourceType  = (resourceType) => {
         setResourceType(resourceType)
     }
     useEffect( function(){
+        setLoading(true)
+        fetch(`https://jsonplaceholder.typicode.com/${resourceType}`).then(
+            (result) => result.json()
+        ).then( (result) => {
+            console.log(result)
+        }).finally(
+            function () {
+
+                setLoading(false);
+
+        }
+        )
+
 
         console.log(resourceType)
     },[resourceType])
@@ -18,7 +31,7 @@ const FeedApp  = () => {
             <h2> Feed App</h2>
             <h4>{resourceType.toLocaleLowerCase()}</h4>
             <div>
-                <button onClick={ ()=> changeSetResourceType('post') }>Posts</button>
+                <button onClick={ ()=> changeSetResourceType('posts') }>Posts</button>
                 <button onClick={ ()=> changeSetResourceType('comments')}>Comments</button>
                 <button onClick={ ()=> changeSetResourceType('todos')}>Todos</button>
 
