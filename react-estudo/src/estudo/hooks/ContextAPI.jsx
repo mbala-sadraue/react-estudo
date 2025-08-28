@@ -12,6 +12,8 @@ const [alunoState, setAlunoState ] = useState({nota1:0, nota2:0, name:''})
 
             <h2> Context API</h2>
             <FormToAddNotas/>
+            <ListsAluno/>
+
         </div>
             </AlunoContext.Provider>
     )
@@ -56,4 +58,16 @@ const FormToAddNotas = ()  =>{
             <button type={'submit'} onClick={ (e) => onClickCalculatir(e)}>Calcular</button>
         </form>
     );
+}
+
+const ListsAluno = () => {
+
+    const {alunoState} = useContext(AlunoContext)
+
+    return (
+        <>
+            <h2>List Alunos</h2>
+            <li> Aluno : {alunoState.name??''} , nota 1 : {alunoState.nota1}, nota 2 é {alunoState.nota2} </li>
+        </>
+    )
 }
