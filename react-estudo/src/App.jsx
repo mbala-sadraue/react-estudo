@@ -8,6 +8,7 @@ import './assets/css/Style.css';
 // import FeedApp from "./estudo/hooks/UseEffect.jsx";
 // import UseRefApp from "./estudo/hooks/UseRef.jsx";
 import UseReducerApp from "./estudo/hooks/UseReducer.jsx";
+import ContextAPI from "./estudo/hooks/ContextAPI.jsx";
 
 function App() {
 
@@ -25,7 +26,8 @@ function App() {
 
         {/*<FeedApp />*/}
         {/*<UseRefApp></UseRefApp>*/}
-        <UseReducerApp/>
+        {/*<UseReducerApp/>*/}
+        <ContextAPI />
     </div>
   )
 }
