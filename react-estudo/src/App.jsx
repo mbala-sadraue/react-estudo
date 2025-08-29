@@ -9,6 +9,7 @@ import './assets/css/Style.css';
 // import UseRefApp from "./estudo/hooks/UseRef.jsx";
 import UseReducerApp from "./estudo/hooks/UseReducer.jsx";
 import ContextAPI from "./estudo/hooks/ContextAPI.jsx";
+import RouterApp from "../Router/RouterApp.jsx";
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
         {/*<FeedApp />*/}
         {/*<UseRefApp></UseRefApp>*/}
         {/*<UseReducerApp/>*/}
-        <ContextAPI />
+        {/*<ContextAPI />*/}
+        <RouterApp/>
     </div>
   )
 }
