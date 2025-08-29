@@ -4,6 +4,11 @@ import {BrowserRouter, Route, Routes, Link, Router} from 'react-router-dom'
 
 const RouterApp = () => (
 <BrowserRouter>
+
+    <Link to={'/'} title={'Home'}>Home</Link>
+    <Link to={'/about'} title={'About'}>About</Link>
+    <Link to={'/contact'} title={'Login'}>Contact</Link>
+
     <Routes>
         <Route  path={'/'}  element={<Home />}  />
         <Route  path={'/about'}  element={<About />} />
