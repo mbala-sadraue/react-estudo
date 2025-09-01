@@ -44,4 +44,39 @@
 </div>
 *
 *
+*
+*
+*
+* 
+*
+* <div>
+    <h5>Font size </h5>
+    <p class="text-xs"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text-sm"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text-base"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text-lg"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text-xl"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="text-2xl"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+
+<div class="mt-10">
+    <h5>Font weight </h5>
+    <p class="font-thin"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-extralight"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-light"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-normal"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-medium"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-semibold"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-bold"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-black"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+
+<div  class="mt-10">
+  <h5> Font femily</h5>
+    <p class="font-serif"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-sans"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="font-mono"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+*
+*
 * */
