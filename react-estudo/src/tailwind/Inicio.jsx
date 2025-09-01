@@ -118,6 +118,41 @@
     </div>
   </div>
 </div>
+*
+*
+*
+*   <div class="grid grid-cols-3 gap-4 bg-gray-100 p-4">
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 2</div>
+    <div class="bg-blue-200 p-2">Item 3</div>
+    <div class="bg-blue-200 p-2">Item 4</div>
+    <div class="bg-blue-200 p-2">Item 5</div>
+    <div class="bg-blue-200 p-2">Item</div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-4 bg-gray-100 p-4">
+    <div class="col-span-2 bg-blue-200 p-2">Ocupa 2 colunas</div>
+    <div class="bg-blue-200 p-2">Item 2</div>
+    <div class="bg-blue-200 p-2">Item 3</div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-2">
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="col-span-2 bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 1</div>
+  </div>
+
+
+  <div class="grid md:grid-cols-2 gap-2  mt-10  sm:grid-col-1">
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="md:col-span-2 bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2">Item 1</div>
+     <div class="bg-blue-200 p-2">Item 1</div>
+    <div class="bg-blue-200 p-2 col-span-full">Item 1</div>
+  </div>
 
 
 
