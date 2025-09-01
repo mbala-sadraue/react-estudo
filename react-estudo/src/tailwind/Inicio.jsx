@@ -15,7 +15,33 @@
 </div>
 </div>
 *
+*Treinar gap
 *
+* <div class="">
+  <h1 class="font-bold text-blue-900 hover:text-red-800">Mbala Sadraque</h1>
+
+  <div class="flex flex-wrap gap-2">
+    <div class="bg-black p-2 text-white">item 1</div>
+    <div class="bg-yellow-400 p-2">item 2</div>
+    <div class="bg-red-700 p-2 text-white">item 3</div>
+  </div>
+
+  <div class="mt-10 grid grid-cols-2 gap-2">
+    <div class="bg-green-200 p-2">Item 1</div>
+    <div class="bg-green-200 p-2">Item 2</div>
+    <div class="bg-green-200 p-2">Item 3</div>
+    <div class="bg-green-200 p-2">Item 4</div>
+    <div class="bg-green-200 p-2">Item 5</div>
+    <div class="bg-green-200 p-2">Item 6</div>
+  </div>
+
+  <div class="grid grid-cols-2 md:gap-3 mt-10">
+    <div class="bg-red-200 p-2">Item 1</div>
+    <div class="bg-red-200 p-2">Item 2</div>
+    <div class="bg-red-200 p-2">Item 3</div>
+    <div class="bg-red-200 p-2">Item 4</div>
+  </div>
+</div>
 *
 *
 * */
