@@ -47,7 +47,17 @@
 *
 *
 *
-* 
+*
+* <div class="border-green-100 border-2">
+    <h5>Font size </h5>
+    <p class="text-purple-500"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="bg-green-600/20"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="border border-red-300"> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+</div>
 *
 * <div>
     <h5>Font size </h5>
@@ -79,4 +89,36 @@
 </div>
 *
 *
+*
+*
+*
+*
+* <div class="">
+  <h1 class="font-bold text-blue-900 hover:text-red-800">Mbala Sadraque</h1>
+
+  <div class="">
+    <div class="flex gap-2 bg-gray-100 p-4">
+      <div class="flex-1 bg-blue-200 p-2">Item 1</div>
+      <div class="flex-1 bg-blue-200 p-2">Item 2</div>
+      <div class="flex-1 bg-blue-200 p-2">Item 3</div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="bg-yellow-200 p-2">Item 1</div>
+    <div class="bg-yellow-200 p-2">Item 2</div>
+    <div class="bg-yellow-200 p-2">Item 3</div>
+  </div>
+
+  <div class="flex flex-row items-center justify-between bg-gray-100">
+    <h1>Logo</h1>
+    <div class="flex flex-row gap-2 justify-self-end bg-gray-100 p-4">
+      <div class="bg-blue-200 p-2 flex-1">Item 1</div>
+      <div class="bg-blue-200 p-2">Item 2</div>
+      <div class="bg-blue-200 p-2">Item 3</div>
+    </div>
+  </div>
+</div>
+
+
+
 * */
