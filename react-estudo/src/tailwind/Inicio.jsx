@@ -155,5 +155,25 @@
   </div>
 
 
+*
+* <div class="m-auto h-screen w-screen bg-gray-500">
+  <div class="m-auto  bg-gray-300">
+    <div class="flex gap-4 overflow-x-auto scrollbar-hidden">
+      <div class="h-60 w-[500px] flex-none shadow-lg"></div>
+      <div class="h-60 w-[500px] flex-none shadow-lg"></div>
+      <div class="h-60 w-[500px] flex-none shadow-lg"></div>
+      <div class="h-60 w-[500px] flex-none  shadow-lg"></div>
+      <div class="h-60 w-[500px] flex-none  shadow-lg"></div>
+      <div class="h-60 w-[500px] shadow-lg"></div>
+      <div class="h-60 w-[500px] flex-none  shadow-lg"></div>
+    </div>
+  </div>
+
+
+  <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 p-4 m-4 w-80 h-32 bg-gray-100  ">
+  <div class="bg-blue-500 text-white p-4 text-lg font-bold flex-none w-40 snap-start">Item 1</div>
+  <div class="bg-green-500 text-white p-4 text-lg font-bold flex-none w-40 snap-start">Item 2</div>
+  <div class="bg-red-500 text-white p-4 text-lg font-bold flex-none w-40 snap-start">Item 3</div>
+</div>
 
 * */
