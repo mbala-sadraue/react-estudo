@@ -1,10 +1,8 @@
-
+import RoutesConfig from './routes';
 function App() {
 
   return (
-    <>
-     <div>Ecommerce-x</div>
-    </>
+   <RoutesConfig />
   )
 }
 
