@@ -1,5 +1,4 @@
 import { BsCart4, BsTwitterX } from 'react-icons/bs'
-import { CiInstagram } from 'react-icons/ci'
 import { FaInstagram } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GoMail, GoPerson } from 'react-icons/go'
@@ -35,7 +34,6 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <div className='lg:flex lg:items-center lg:justify-between space-y-3 lg:space-y-0'>
 

@@ -8,7 +8,7 @@
 
   color-scheme: light dark;
   /* color-scheme: light dark; */
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(231, 221, 221, 0.87);
   /* background-color: #242424; */
 
   font-synthesis: none;
@@ -31,7 +31,7 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #e6e6e6;
   }
   a:hover {
     color: #747bff;
