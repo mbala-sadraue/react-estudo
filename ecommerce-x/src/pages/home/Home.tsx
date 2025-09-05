@@ -68,7 +68,7 @@ const Home = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center justify-between px-3 py-4 text-gray-500  border-gray-300">
+                            <a href="#" className="flex items-center justify-between px-3 py-4  border-b  border-gray-300">
                                 <div className="flex items-center space-x-3">
                                     <IoGameControllerOutline className="text-xl" />
                                     <span className="text-sm">Mobile</span>
@@ -76,15 +76,33 @@ const Home = () => {
                                 <IoMdArrowDropright />
                             </a>
                         </li>
+                         <li>
+                            <a href="#" className="flex items-center justify-between px-3 py-4  text-gray-500 border-b border-gray-300">
+                                <div className="flex items-center space-x-3">
+                                    <IoMdPhonePortrait className="text-xl" />
+                                    <span className="text-sm">Mobile</span>
+                                </div>
+                                <IoMdArrowDropright />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="flex items-center justify-between px-3 py-4">
+                                <div className="flex items-center space-x-3">
+                                    <FaComputer className="text-xl" />
+                                    <span className="text-sm">Computers</span>
+                                </div>
+                                <IoMdArrowDropright />
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
-                <div className="bg-gray-100 md:col-span-2"></div>
+                <div className="bg-blue-950 md:col-span-2"></div>
                 <div className="bg-white p-3 px-10">
                     <div>
                         <h2 className="font-semibold text-lg mb-3">Deal of the Day</h2>
                         <div className="">
-                            <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                            <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
                                 <div > <RiNumber1  className="text-2xl text-gray-400"/></div>
                                 <div>
                                     <h4 className="text-xs">Product Name</h4>
@@ -94,7 +112,7 @@ const Home = () => {
                                     
                                 </div>
                             </div>
-                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
                                 <div > <RiNumber2  className="text-2xl text-gray-400"/></div>
                                 <div>
                                     <h4 className="text-xs">Product Name</h4>
@@ -104,7 +122,7 @@ const Home = () => {
                                     
                                 </div>
                             </div>
-                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
                                 <div > <RiNumber3 className="text-2xl text-gray-400"/></div>
                                 <div>
                                     <h4 className="text-xs">Product Name</h4>
@@ -114,7 +132,7 @@ const Home = () => {
                                     
                                 </div>
                             </div>
-                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
                                 <div > <RiNumber4  className="text-2xl text-gray-400"/></div>
                                 <div>
                                     <h4 className="text-xs">Product Name</h4>
