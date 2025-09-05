@@ -42,7 +42,7 @@ const Header = () => {
                             <div className="flex items-center justify-between py-2 lg:mr-14">
                                 <div className="flex items-center space-x-4 ">
                                     <div>
-                                        <GiHamburgerMenu className='text-3xl' />
+                                        <GiHamburgerMenu className='text-3xl lg:hidden' />
                                     </div>
                                     <div className='flex items-center'>
                                         <h1 className='text-xl font-bold uppercase'>EommerceX</h1>

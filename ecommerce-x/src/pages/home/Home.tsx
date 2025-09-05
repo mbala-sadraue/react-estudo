@@ -1,8 +1,8 @@
 import { FaComputer, FaTv } from "react-icons/fa6"
-import { GiHeadphones } from "react-icons/gi"
-import {  IoIosFitness, IoMdArrowDropright, IoMdPhonePortrait } from "react-icons/io"
+import { IoIosFitness, IoMdArrowDropright, IoMdPhonePortrait } from "react-icons/io"
 import { IoCameraOutline, IoGameControllerOutline } from "react-icons/io5"
 import { PiBicycleLight } from "react-icons/pi"
+import { RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5 } from "react-icons/ri"
 
 const Home = () => {
     return (
@@ -79,8 +79,65 @@ const Home = () => {
                     </ul>
 
                 </div>
-                <div className="bg-amber-500 md:col-span-2">B</div>
-                <div className="bg-amber-200">C</div>
+                <div className="bg-gray-100 md:col-span-2"></div>
+                <div className="bg-white p-3 px-10">
+                    <div>
+                        <h2 className="font-semibold text-lg mb-3">Deal of the Day</h2>
+                        <div className="">
+                            <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                                <div > <RiNumber1  className="text-2xl text-gray-400"/></div>
+                                <div>
+                                    <h4 className="text-xs">Product Name</h4>
+                                    <p className="text-black font-semibold mt-1">$399.00</p>
+                                </div>
+                                <div className="w-15 h-15 rounded-lg bg-gray-300">
+                                    
+                                </div>
+                            </div>
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                                <div > <RiNumber2  className="text-2xl text-gray-400"/></div>
+                                <div>
+                                    <h4 className="text-xs">Product Name</h4>
+                                    <p className="text-black font-semibold mt-1">$399.00</p>
+                                </div>
+                                <div className="w-15 h-15 rounded-lg bg-gray-300">
+                                    
+                                </div>
+                            </div>
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                                <div > <RiNumber3 className="text-2xl text-gray-400"/></div>
+                                <div>
+                                    <h4 className="text-xs">Product Name</h4>
+                                    <p className="text-black font-semibold mt-1">$399.00</p>
+                                </div>
+                                <div className="w-15 h-15 rounded-lg bg-gray-300">
+                                    
+                                </div>
+                            </div>
+                             <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3">
+                                <div > <RiNumber4  className="text-2xl text-gray-400"/></div>
+                                <div>
+                                    <h4 className="text-xs">Product Name</h4>
+                                    <p className="text-black font-semibold mt-1">$399.00</p>
+                                </div>
+                                <div className="w-15 h-15 rounded-lg bg-gray-300">
+                                    
+                                </div>
+                            </div>
+                             <div className="text-sm flex justify-between items-center pb-3">
+                                <div > <RiNumber5  className="text-2xl text-gray-400"/></div>
+                                <div>
+                                    <h4 className="text-xs">Product Name</h4>
+                                    <p className="text-black font-semibold mt-1">$399.00</p>
+                                </div>
+                                <div className="w-15 h-15 rounded-lg bg-gray-300">
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
