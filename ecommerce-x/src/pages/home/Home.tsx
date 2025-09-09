@@ -185,7 +185,7 @@ const Home = () => {
                 </div>
                 <div className="flex">
                     <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
-                        <div className="bg-white text-lg font-bold  md:flex-1 snap-start rounded-sm p-2">
+                        <div className="bg-white text-lg font-bold   snap-start rounded-sm p-2">
                             <div className="bg-gray-100 min-w-[280px] min-h-[280px] ">
 
                             </div>
@@ -208,9 +208,12 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className="bg-white p-4 text-lg font-bold min-w-[270px] md:flex-1 snap-start rounded-sm">Item 2</div>
-                        <div className="bg-white p-4 text-lg font-bold min-w-[270px] md:flex-1 snap-start rounded-sm">Item 3</div>
-                        <div className="bg-white  p-4 text-lg font-bold min-w-[270px] md:flex-1 snap-start rounded-sm">Item 4</div>
+                        <div className="bg-white p-4 text-lg font-bold min-w-[270px] snap-start rounded-sm">Item 2</div>
+                        <div className="bg-white p-4 text-lg font-bold min-w-[270px]  snap-start rounded-sm">Item 3</div>
+                        <div className="bg-white  p-4 text-lg font-bold min-w-[270px]  snap-start rounded-sm">Item 4</div>
+                        <div className="bg-white  p-4 text-lg font-bold min-w-[270px]  snap-start rounded-sm">Item 4</div>
+                        <div className="bg-white  p-4 text-lg font-bold min-w-[270px]  snap-start rounded-sm">Item 4</div>
+                        <div className="bg-white  p-4 text-lg font-bold min-w-[270px]  snap-start rounded-sm">Item 4</div>
                     </div>
                 </div>
             </section>
