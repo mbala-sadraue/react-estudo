@@ -186,8 +186,10 @@ const Home = () => {
                 <div className="flex">
                     <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
                         <div className="bg-white text-lg font-bold   snap-start rounded-sm p-2">
-                            <div className="bg-gray-100 min-w-[280px] min-h-[280px] ">
-
+                            <div className="bg-gray-100 min-w-[280px] min-h-[280px] relative">
+                                <div className="bg-blue-100 absolute right-2 top-2 py-2 px-3 rounded-md border border-gray-400">
+                                    <p className="text-xs font-medium text-blue-700">New</p>
+                                </div>
                             </div>
                             <div className="mt-2">
                                 <h4 className="text-sm">Product Name</h4>
@@ -201,7 +203,7 @@ const Home = () => {
                                         Add to Cart
                                     </button>
                                     <div className="flex space-x-3 justify-between items-center py-1">
-                                        <CiHeart  className="text-xl" />
+                                        <CiHeart className="text-xl" />
                                         <TfiReload className="text-xl" />
                                     </div>
                                 </div>
