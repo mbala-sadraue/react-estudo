@@ -195,11 +195,29 @@ const Home = () => {
                         <ProductCardBig />
                     </div>
                 </div>
-            <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
+                <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
             </section>
 
+            <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
+                <div className="">
 
+                    <div className="flex py-3   mb-3">
+                        <div className="w-1/3 h-70 bg-gray-300  mr-2">
 
+                        </div>
+
+                        <div className="flex-1">
+                            <div className="flex   justify-between">
+                                <h3 className="text-md font-bold">Top Categories</h3>
+                                <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
+                            </div>
+                            <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     )
 }
