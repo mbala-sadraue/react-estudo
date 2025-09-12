@@ -10,7 +10,7 @@ import { TfiReload } from "react-icons/tfi"
 const Home = () => {
     const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     return (
-        <main>
+        <main className="lg:p-0 px-5" >
             <section className="max-w-screen-2xl mx-auto py-3 sm:px-4 lg:pt-10  md:px-0">
                 <div className="grid md:grid-cols-4 gap-4">
                     <div className="bg-white pb-5">
@@ -202,7 +202,7 @@ const Home = () => {
                 <div className="">
 
                     <div className="lg:flex py-3   mb-3">
-                        <div className="lg:w-1/3 h-70 bg-gray-300  mr-2">
+                        <div className="lg:w-1/3 min-h-90 lg:min-h-full bg-gray-300  mr-2">
 
                         </div>
 
@@ -211,13 +211,20 @@ const Home = () => {
                                 <h3 className="text-md font-bold">Top Categories</h3>
                                 <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
                             </div>
-                            <div className="flex flex-col-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+                            <div className="overflow-x-auto">
+
+                               <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
+                                 <ProductCardSmall className="" />
                                 <ProductCardSmall />
                                 <ProductCardSmall />
                                 <ProductCardSmall />
                                 <ProductCardSmall />
                                 <ProductCardSmall />
                                 <ProductCardSmall />
+                                <ProductCardSmall />
+                                <ProductCardSmall />
+                               </div>
+
                             </div>
                         </div>
                     </div>
@@ -232,7 +239,7 @@ const Home = () => {
 const ProductCardSmall = ({ className }: { className?: string }) => {
 
     return (
-        <div className={`  min-w-1/2  bg-white  ${className}`}>
+        <div className={`min-w-[300px] flex  bg-white  ${className}`}>
             <div className="flex flex-col-2 space-x-3  p-2">
                 <div className="w-20 h-20 bg-gray-300 rounded-md">
 
