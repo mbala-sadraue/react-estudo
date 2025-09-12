@@ -185,7 +185,7 @@ const Home = () => {
                     <a href="http://" className="">See All</a>
                 </div>
                 <div className="flex">
-                    <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+                    <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
                         <ProductCardBig />
                         <ProductCardBig />
                         <ProductCardBig />
@@ -201,18 +201,23 @@ const Home = () => {
             <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
                 <div className="">
 
-                    <div className="flex py-3   mb-3">
-                        <div className="w-1/3 h-70 bg-gray-300  mr-2">
+                    <div className="lg:flex py-3   mb-3">
+                        <div className="lg:w-1/3 h-70 bg-gray-300  mr-2">
 
                         </div>
 
-                        <div className="flex-1">
+                        <div className="flex-1 lg:ml-5">
                             <div className="flex   justify-between">
                                 <h3 className="text-md font-bold">Top Categories</h3>
                                 <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
                             </div>
-                            <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
-
+                            <div className="flex flex-col-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+                                <ProductCardSmall />
+                                <ProductCardSmall />
+                                <ProductCardSmall />
+                                <ProductCardSmall />
+                                <ProductCardSmall />
+                                <ProductCardSmall />
                             </div>
                         </div>
                     </div>
@@ -221,6 +226,30 @@ const Home = () => {
         </main>
     )
 }
+
+
+
+const ProductCardSmall = ({ className }: { className?: string }) => {
+
+    return (
+        <div className={`  min-w-1/2  bg-white  ${className}`}>
+            <div className="flex flex-col-2 space-x-3  p-2">
+                <div className="w-20 h-20 bg-gray-300 rounded-md">
+
+                </div>
+                <div>
+                    <h4 className="text-sm mt-2">Product Name</h4>
+                    <p className="text-black font-semibold mt-1 text-sm">$399.00</p>
+                    <div className="flex space-x-3 items-center py-1 mt-2">
+                        <MdAddShoppingCart className="mr-2 text-sm" />
+                        <CiHeart className="text-sm" />
+                        <TfiReload className="text-sm" />
+                    </div>
+                </div>
+            </div>
+        </div>);
+}
+
 
 const ProductCardBig = () => {
 
