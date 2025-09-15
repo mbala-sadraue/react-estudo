@@ -1,5 +1,5 @@
 import { FaComputer, FaTv } from "react-icons/fa6"
-import { IoIosFitness, IoMdArrowDropright, IoMdPhonePortrait } from "react-icons/io"
+import { IoIosFitness, IoMdPhonePortrait } from "react-icons/io"
 import { IoCameraOutline, IoGameControllerOutline } from "react-icons/io5"
 import { PiBicycleLight } from "react-icons/pi"
 import { RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5 } from "react-icons/ri"
@@ -8,9 +8,45 @@ import { ProductCardBig } from "../../components/product/ProductCardBig"
 import { ProductCardSmall } from "../../components/product/ProductCardSmall"
 import { CategoryLink } from "../../components/CategoryLink"
 import ProductDealDay from "../../components/product/ProductDealDay"
+import { useEffect, useState } from "react"
 
+
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+}
 const Home = () => {
-    const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    const [products, setProducts] = useState<Product[]>([]);
+
+    useEffect(
+        () => {
+
+            const listProducts = [
+                { id: 1, name: 'Product 1', price: 100 },
+                { id: 2, name: 'Product 2', price: 200 },
+                { id: 3, name: 'Product 3', price: 300 },
+                { id: 4, name: 'Product 4', price: 400 },
+                { id: 5, name: 'Product 5', price: 500 },
+                { id: 6, name: 'Product 6', price: 600 },
+                { id: 7, name: 'Product 7', price: 700 },
+                { id: 8, name: 'Product 8', price: 800 },
+                { id: 9, name: 'Product 9', price: 900 },
+                { id: 10, name: 'Product 10', price: 1000 },
+
+            ]
+            updateProductList(listProducts);
+        }
+
+
+        , [])
+
+
+    const updateProductList = (newProducts: Product[]) => {
+        setProducts(newProducts);
+    }
+
     return (
         <main className="lg:p-0 px-5" >
             <section className="max-w-screen-2xl mx-auto py-3 sm:px-4 lg:pt-10  md:px-0">
