@@ -1,11 +1,13 @@
-import { CiHeart } from "react-icons/ci"
 import { FaComputer, FaTv } from "react-icons/fa6"
 import { IoIosFitness, IoMdArrowDropright, IoMdPhonePortrait } from "react-icons/io"
 import { IoCameraOutline, IoGameControllerOutline } from "react-icons/io5"
-import { MdAddShoppingCart } from "react-icons/md"
 import { PiBicycleLight } from "react-icons/pi"
 import { RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5 } from "react-icons/ri"
-import { TfiReload } from "react-icons/tfi"
+
+import { ProductCardBig } from "../../components/product/ProductCardBig"
+import { ProductCardSmall } from "../../components/product/ProductCardSmall"
+import { CategoryLink } from "../../components/CategoryLink"
+import ProductDealDay from "../../components/product/ProductDealDay"
 
 const Home = () => {
     const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -16,87 +18,17 @@ const Home = () => {
                     <div className="bg-white pb-5">
 
                         <ul>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4  text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <IoMdPhonePortrait className="text-xl" />
-                                        <span className="text-sm">Mobile</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4  text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <FaComputer className="text-xl" />
-                                        <span className="text-sm">Computers</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4 text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <IoCameraOutline className="text-xl" />
-                                        <span className="text-sm">Video & Cameras</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4 text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <FaTv className="text-xl" />
-                                        <span className="text-sm">Televisions</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4 text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <PiBicycleLight className="text-xl" />
-                                        <span className="text-sm">Bicycles</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4 text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <IoIosFitness className="text-xl" />
-                                        <span className="text-sm">Fitness</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4  border-b  border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <IoGameControllerOutline className="text-xl" />
-                                        <span className="text-sm">Mobile</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4  text-gray-500 border-b border-gray-300">
-                                    <div className="flex items-center space-x-3">
-                                        <IoMdPhonePortrait className="text-xl" />
-                                        <span className="text-sm">Mobile</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="flex items-center justify-between px-3 py-4">
-                                    <div className="flex items-center space-x-3">
-                                        <FaComputer className="text-xl" />
-                                        <span className="text-sm">Computers</span>
-                                    </div>
-                                    <IoMdArrowDropright />
-                                </a>
-                            </li>
+
+                            <CategoryLink icon={IoMdPhonePortrait} label="Mobile" />
+                            <CategoryLink icon={FaComputer} label="Computers" />
+                            <CategoryLink icon={IoCameraOutline} label="Video & Cameras" />
+                            <CategoryLink icon={FaTv} label="Televisions" />
+                            <CategoryLink icon={PiBicycleLight} label="Bicycles" />
+                            <CategoryLink icon={IoIosFitness} label="Fitness" />
+                            <CategoryLink icon={IoGameControllerOutline} label="Gaming" />
+                            <CategoryLink icon={IoMdPhonePortrait} label="Mobile" />
+                            <CategoryLink icon={FaComputer} label="Computers" />
+
                         </ul>
 
                     </div>
@@ -105,63 +37,18 @@ const Home = () => {
                         <div>
                             <h2 className="font-semibold text-lg mb-3">Deal of the Day</h2>
                             <div className="">
-                                <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
-                                    <div > <RiNumber1 className="text-2xl text-gray-400" /></div>
-                                    <div>
-                                        <h4 className="text-xs">Product Name</h4>
-                                        <p className="text-black font-semibold mt-1">$399.00</p>
-                                    </div>
-                                    <div className="w-15 h-15 rounded-lg bg-gray-300">
-
-                                    </div>
-                                </div>
-                                <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
-                                    <div > <RiNumber2 className="text-2xl text-gray-400" /></div>
-                                    <div>
-                                        <h4 className="text-xs">Product Name</h4>
-                                        <p className="text-black font-semibold mt-1">$399.00</p>
-                                    </div>
-                                    <div className="w-15 h-15 rounded-lg bg-gray-300">
-
-                                    </div>
-                                </div>
-                                <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
-                                    <div > <RiNumber3 className="text-2xl text-gray-400" /></div>
-                                    <div>
-                                        <h4 className="text-xs">Product Name</h4>
-                                        <p className="text-black font-semibold mt-1">$399.00</p>
-                                    </div>
-                                    <div className="w-15 h-15 rounded-lg bg-gray-300">
-
-                                    </div>
-                                </div>
-                                <div className="text-sm flex justify-between items-center border-b border-gray-300 pb-3 my-4">
-                                    <div > <RiNumber4 className="text-2xl text-gray-400" /></div>
-                                    <div>
-                                        <h4 className="text-xs">Product Name</h4>
-                                        <p className="text-black font-semibold mt-1">$399.00</p>
-                                    </div>
-                                    <div className="w-15 h-15 rounded-lg bg-gray-300">
-
-                                    </div>
-                                </div>
-                                <div className="text-sm flex justify-between items-center pb-3">
-                                    <div > <RiNumber5 className="text-2xl text-gray-400" /></div>
-                                    <div>
-                                        <h4 className="text-xs">Product Name</h4>
-                                        <p className="text-black font-semibold mt-1">$399.00</p>
-                                    </div>
-                                    <div className="w-15 h-15 rounded-lg bg-gray-300">
-
-                                    </div>
-                                </div>
+                                <ProductDealDay icon={RiNumber1} label="Product Name" />
+                                <ProductDealDay icon={RiNumber2} label="Product Name" />
+                                <ProductDealDay icon={RiNumber3} label="Product Name" />
+                                 
+                                <ProductDealDay icon={RiNumber4} label="Product Name" />
+                                <ProductDealDay icon={RiNumber5} label="Product Name" />
+                             
 
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </section>
 
             <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
@@ -177,115 +64,63 @@ const Home = () => {
             </section>
 
             {/* Products */}
-            <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
+                                <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
 
-                <div className="flex py-3 justify-between items-center mb-3">
-                    <h3 className="text-md font-bold">New Arrivals</h3>
+                                    <div className="flex py-3 justify-between items-center mb-3">
+                                        <h3 className="text-md font-bold">New Arrivals</h3>
 
-                    <a href="http://" className="">See All</a>
-                </div>
-                <div className="flex">
-                    <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                    </div>
-                </div>
-                <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
-            </section>
+                                        <a href="http://" className="">See All</a>
+                                    </div>
+                                    <div className="flex">
+                                        <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                            <ProductCardBig />
+                                        </div>
+                                    </div>
+                                    <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
+                                </section>
 
-            <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
-                <div className="">
+                                <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
+                                    <div className="">
 
-                    <div className="lg:flex py-3   mb-3">
-                        <div className="lg:w-1/3 min-h-90 lg:min-h-full bg-gray-300  mr-2">
+                                        <div className="lg:flex py-3   mb-3">
+                                            <div className="lg:w-1/3 min-h-90 lg:min-h-full bg-gray-300  mr-2">
 
-                        </div>
+                                            </div>
 
-                        <div className="flex-1 lg:ml-5">
-                            <div className="flex   justify-between">
-                                <h3 className="text-md font-bold">Top Categories</h3>
-                                <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
-                            </div>
-                            <div className="overflow-x-auto">
+                                            <div className="flex-1 lg:ml-5">
+                                                <div className="flex   justify-between">
+                                                    <h3 className="text-md font-bold">Top Categories</h3>
+                                                    <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
+                                                </div>
+                                                <div className="overflow-x-auto">
 
-                               <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
-                                 <ProductCardSmall className="" />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                                <ProductCardSmall />
-                               </div>
+                                                    <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
+                                                        <ProductCardSmall className="" />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                        <ProductCardSmall />
+                                                    </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    )
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </main>
+                            )
 }
 
 
 
-const ProductCardSmall = ({ className }: { className?: string }) => {
-
-    return (
-        <div className={`min-w-[300px] flex  bg-white  ${className}`}>
-            <div className="flex flex-col-2 space-x-3  p-2">
-                <div className="w-20 h-20 bg-gray-300 rounded-md">
-
-                </div>
-                <div>
-                    <h4 className="text-sm mt-2">Product Name</h4>
-                    <p className="text-black font-semibold mt-1 text-sm">$399.00</p>
-                    <div className="flex space-x-3 items-center py-1 mt-2">
-                        <MdAddShoppingCart className="mr-2 text-sm" />
-                        <CiHeart className="text-sm" />
-                        <TfiReload className="text-sm" />
-                    </div>
-                </div>
-            </div>
-        </div>);
-}
-
-
-const ProductCardBig = () => {
-
-    return (
-        <div className="bg-white text-lg font-bold   snap-start rounded-sm p-2">
-            <div className="bg-gray-100 min-w-[280px] min-h-[280px] relative">
-                <div className="bg-blue-100 absolute right-2 top-2 py-2 px-3 rounded-md border border-gray-400">
-                    <p className="text-xs font-medium text-blue-700">New</p>
-                </div>
-            </div>
-            <div className="mt-2">
-                <h4 className="text-sm">Product Name</h4>
-                <p className="text-black font-semibold mt-1 text-sm">$399.00</p>
-            </div>
-            <div className="mt-1 border-t border-gray-300 pt-2 text-xs text-gray-500">
-                <div className="flex">
-                    <input type="number" className="border border-gray-300 rounded-md p-1 w-16 focus-visible:border-red-500" name="quantity" id="" minLength={1} min={0} />
-                    <button className=" flex-1 py-1 rounded-md ml-3 flex items-center hover:text-blue-500">
-                        <MdAddShoppingCart className="mr-2 text-xl" />
-                        Add to Cart
-                    </button>
-                    <div className="flex space-x-3 justify-between items-center py-1">
-                        <CiHeart className="text-xl" />
-                        <TfiReload className="text-xl" />
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    );
-}
-export default Home
+                            export default Home
