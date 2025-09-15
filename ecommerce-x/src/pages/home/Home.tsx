@@ -16,9 +16,7 @@ const Home = () => {
             <section className="max-w-screen-2xl mx-auto py-3 sm:px-4 lg:pt-10  md:px-0">
                 <div className="grid md:grid-cols-4 gap-4">
                     <div className="bg-white pb-5">
-
                         <ul>
-
                             <CategoryLink icon={IoMdPhonePortrait} label="Mobile" />
                             <CategoryLink icon={FaComputer} label="Computers" />
                             <CategoryLink icon={IoCameraOutline} label="Video & Cameras" />
@@ -28,9 +26,7 @@ const Home = () => {
                             <CategoryLink icon={IoGameControllerOutline} label="Gaming" />
                             <CategoryLink icon={IoMdPhonePortrait} label="Mobile" />
                             <CategoryLink icon={FaComputer} label="Computers" />
-
                         </ul>
-
                     </div>
                     <div className="bg-blue-950 md:col-span-2"></div>
                     <div className="bg-white p-3 px-10">
@@ -40,11 +36,8 @@ const Home = () => {
                                 <ProductDealDay icon={RiNumber1} label="Product Name" />
                                 <ProductDealDay icon={RiNumber2} label="Product Name" />
                                 <ProductDealDay icon={RiNumber3} label="Product Name" />
-                                 
                                 <ProductDealDay icon={RiNumber4} label="Product Name" />
                                 <ProductDealDay icon={RiNumber5} label="Product Name" />
-                             
-
                             </div>
                         </div>
                     </div>
@@ -52,7 +45,6 @@ const Home = () => {
             </section>
 
             <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
-
                 <div className="flex">
                     <div className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
                         <div className="bg-white text-lg font-bold min-w-[270px] h-50 md:flex-1 snap-start rounded-sm">Item 1</div>
@@ -64,63 +56,54 @@ const Home = () => {
             </section>
 
             {/* Products */}
-                                <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
+            <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
 
-                                    <div className="flex py-3 justify-between items-center mb-3">
-                                        <h3 className="text-md font-bold">New Arrivals</h3>
+                <div className="flex py-3 justify-between items-center mb-3">
+                    <h3 className="text-md font-bold">New Arrivals</h3>
 
-                                        <a href="http://" className="">See All</a>
-                                    </div>
-                                    <div className="flex">
-                                        <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                            <ProductCardBig />
-                                        </div>
-                                    </div>
-                                    <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
-                                </section>
-
-                                <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
-                                    <div className="">
-
-                                        <div className="lg:flex py-3   mb-3">
-                                            <div className="lg:w-1/3 min-h-90 lg:min-h-full bg-gray-300  mr-2">
-
-                                            </div>
-
-                                            <div className="flex-1 lg:ml-5">
-                                                <div className="flex   justify-between">
-                                                    <h3 className="text-md font-bold">Top Categories</h3>
-                                                    <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
-                                                </div>
-                                                <div className="overflow-x-auto">
-
-                                                    <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
-                                                        <ProductCardSmall className="" />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                        <ProductCardSmall />
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </main>
-                            )
+                    <a href="http://" className="">See All</a>
+                </div>
+                <div className="flex">
+                    <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
+                        <ProductCardBig />
+                        <ProductCardBig />
+                        <ProductCardBig />
+                        <ProductCardBig />
+                        <ProductCardBig />
+                        <ProductCardBig />
+                        <ProductCardBig />
+                    </div>
+                </div>
+                <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
+            </section>
+            <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
+                <div className="">
+                    <div className="lg:flex py-3   mb-3">
+                        <div className="lg:w-1/3 min-h-90 lg:min-h-full bg-gray-300  mr-2"> </div>
+                        <div className="flex-1 lg:ml-5">
+                            <div className="flex   justify-between">
+                                <h3 className="text-md font-bold">Top Categories</h3>
+                                <div className="bg-gray-200 text-gray-600 px-2 py-1 rounded-full text-xs">8 Items</div>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
+                                    <ProductCardSmall className="" />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                    <ProductCardSmall />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    )
 }
 
-
-
-                            export default Home
+export default Home
