@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Treinar tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+
+<header class="w-full shadow-xl">
+        <div class="max-w-7xl m-auto px-4  ">
+            <div  class="flex justify-between items-center py-2">
+                    <!--Logo-->
+                <div class="flex items-center  space-x-4">
+                    <div class="flex-shrink-0 bg-blue-700 text-white h-10 w-10 rounded-md flex items-center justify-center ">
+                        <span class="text-md font-bold flex-none"> L</span>
+
+                    </div>
+                    <span class="text-md font-bold text-gray-900">Logo</span>
+                </div>
+
+                    <nav class=" hidden md:flex items-center justify-end space-x-8">
+                        <a href="http://" class="py-2 px-3 text-gray-700 hover:text-blue-700 text-sm font-medium border-b-2  hover:border-b-2 hover:border-blue-600 border-white" > Inicio</a>
+                    <a href="http://" class="py-2 px-3 text-gray-700 hover:text-blue-700 text-sm font-medium border-b-2  hover:border-b-2 hover:border-blue-600 border-white"> Sobre</a>
+                        <a href="http://" class="py-2 px-3 text-gray-700 hover:text-blue-700 text-sm font-medium border-b-2 hover:border-b-2 hover:border-blue-600 border-white"> Serviço</a>
+                        <a href="http://" class="py-2 px-3 text-gray-700 hover:text-blue-700 text-sm font-medium border-b-2 hover:border-b-2 hover:border-blue-600 border-white"> Portfolio</a>
+                        <a href="http://" class="py-2 px-3 text-gray-700 hover:text-blue-700 text-sm font-medium border-b-2 hover:border-b-2 hover:border-blue-600 border-white"> Contacto</a>
+                    </nav>
+
+                <!-- Sign-->
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="http://"class="py-2 px-4 text-gray-700 hover:text-blue-700 text-sm font-medium rounded-md " > Login</a>
+                    <a href="http://" class="py-2 px-4 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-800"> Registro</a>
+                </div>
+
+                <div class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </div>
+
+            </div>
+
+        </div>
+</header>
+
+<style>
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<div class="relative container max-w-4xl mx-auto p-4 m-4 bg-gray-100 border-2 border-blue-500 rounded-lg">
+  <div class="sticky top-0 bg-blue-500 text-white p-2 text-lg sm:text-xl font-bold z-10">
+    Lista de Itens
+  </div>
+  <div id="scrollContainer" class="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 mt-4 w-full sm:w-80 md:w-96 select-none">
+    <div class="bg-blue-500 text-white p-4 text-sm sm:text-lg font-bold flex-none w-40 snap-start">Item 1</div>
+    <div class="bg-green-500 text-white p-4 text-sm sm:text-lg font-bold flex-none w-40 snap-start">Item 2</div>
+    <div class="bg-red-500 text-white p-4 text-sm sm:text-lg font-bold flex-none w-40 snap-start">Item 3</div>
+    <div class="bg-yellow-500 text-white p-4 text-sm sm:text-lg font-bold flex-none w-40 snap-start">Item 4</div>
+  </div>
+  <div class="absolute bottom-2 right-2 bg-purple-500 text-white p-2 text-sm font-bold z-20">
+    Botão
+  </div>
+</div>
+
+<script>
+  const scrollContainer = document.getElementById('scrollContainer');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  scrollContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    scrollContainer.classList.add('cursor-grabbing');
+    startX = e.pageX - scrollContainer.offsetLeft;
+    scrollLeft = scrollContainer.scrollLeft;
+  });
+
+  scrollContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    scrollContainer.classList.remove('cursor-grabbing');
+  });
+
+  scrollContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    scrollContainer.classList.remove('cursor-grabbing');
+  });
+
+  scrollContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainer.scrollLeft = scrollLeft - walk;
+  });
+</script>
+</body>
+</html>
