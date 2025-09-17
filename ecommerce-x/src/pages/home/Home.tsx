@@ -11,7 +11,7 @@ import ProductDealDay from "../../components/product/ProductDealDay"
 import { useEffect, useState } from "react"
 
 
-interface Product {
+export interface Product {
     id: number;
     name: string;
     price: number;
@@ -20,32 +20,35 @@ const Home = () => {
 
     const [products, setProducts] = useState<Product[]>([]);
 
+    const listProducts:Product[] = [
+        { id: 1, name: 'Product 1', price: 100 },
+        { id: 2, name: 'Product 2', price: 200 },
+        { id: 3, name: 'Product 3', price: 300 },
+        { id: 4, name: 'Product 4', price: 400 },
+        { id: 5, name: 'Product 5', price: 500 },
+        { id: 6, name: 'Product 6', price: 600 },
+        { id: 7, name: 'Product 7', price: 700 },
+        { id: 8, name: 'Product 8', price: 800 },
+        { id: 9, name: 'Product 9', price: 900 },
+        { id: 10, name: 'Product 10', price: 1000 },
+
+    ]
+    const listProductsSmall = products.map((product, index) => index != 9 && <ProductCardSmall key={index} product={product} />);
+    const listaProdutos =  products.map((product) =>    <ProductCardBig  key={product.id} product={product}/>);
+
     useEffect(
         () => {
 
-            const listProducts = [
-                { id: 1, name: 'Product 1', price: 100 },
-                { id: 2, name: 'Product 2', price: 200 },
-                { id: 3, name: 'Product 3', price: 300 },
-                { id: 4, name: 'Product 4', price: 400 },
-                { id: 5, name: 'Product 5', price: 500 },
-                { id: 6, name: 'Product 6', price: 600 },
-                { id: 7, name: 'Product 7', price: 700 },
-                { id: 8, name: 'Product 8', price: 800 },
-                { id: 9, name: 'Product 9', price: 900 },
-                { id: 10, name: 'Product 10', price: 1000 },
-
-            ]
             updateProductList(listProducts);
-        }
 
-
-        , [])
+        }, [])
 
 
     const updateProductList = (newProducts: Product[]) => {
         setProducts(newProducts);
     }
+
+
 
     return (
         <main className="lg:p-0 px-5" >
@@ -101,13 +104,7 @@ const Home = () => {
                 </div>
                 <div className="flex">
                     <div className="flex flex-row-2 overflow-x-auto scrollbar-hidden snap-x snap-mandatory gap-4 w-full   rounded-lg  lg:overflow-x-hidden">
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
-                        <ProductCardBig />
+                        {listaProdutos}
                     </div>
                 </div>
                 <section className="h-40 my-10 px-3 bg-white rounded-md"></section>
@@ -123,15 +120,8 @@ const Home = () => {
                             </div>
                             <div className="overflow-x-auto">
                                 <div className="grid grid-rows-2 grid-flow-col md:grid-rows-3 gap-3 max-w">
-                                    <ProductCardSmall className="" />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
-                                    <ProductCardSmall />
+                                    {/* <ProductCardSmall className="" /> */}
+                                    {listProductsSmall}
                                 </div>
                             </div>
                         </div>

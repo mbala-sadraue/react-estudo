@@ -1,13 +1,11 @@
-import { FaComputer, FaTv } from "react-icons/fa6"
-import { IoIosFitness, IoMdArrowDropright, IoMdPhonePortrait } from "react-icons/io"
-import { IoCameraOutline, IoGameControllerOutline } from "react-icons/io5"
+
 import { MdAddShoppingCart } from "react-icons/md"
-import { PiBicycleLight } from "react-icons/pi"
-import { RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5 } from "react-icons/ri"
 import { TfiReload } from "react-icons/tfi"
 import { CiHeart } from "react-icons/ci"
+import  '../../pages/home/Home'
+import type { Product } from "../../pages/home/Home"
 
-const ProductCardBig = () => {
+const ProductCardBig = ( {product}:{product:Product} ) => {
       return (
         <div className="bg-white text-lg font-bold   snap-start rounded-sm p-2">
             <div className="bg-gray-100 min-w-[280px] min-h-[280px] relative">
@@ -16,8 +14,8 @@ const ProductCardBig = () => {
                 </div>
             </div>
             <div className="mt-2">
-                <h4 className="text-sm">Product Name</h4>
-                <p className="text-black font-semibold mt-1 text-sm">$399.00</p>
+                <h4 className="text-sm">{product.name}</h4>
+                <p className="text-black font-semibold mt-1 text-sm">${product.price}.00</p>
             </div>
             <div className="mt-1 border-t border-gray-300 pt-2 text-xs text-gray-500">
                 <div className="flex">
