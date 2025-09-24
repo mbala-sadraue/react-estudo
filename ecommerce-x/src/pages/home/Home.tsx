@@ -72,11 +72,11 @@ const Home = () => {
                         <div>
                             <h2 className="font-semibold text-lg mb-3">Deal of the Day</h2>
                             <div className="">
-                                <ProductDealDay icon={RiNumber1} label="Product Name" />
-                                <ProductDealDay icon={RiNumber2} label="Product Name" />
-                                <ProductDealDay icon={RiNumber3} label="Product Name" />
-                                <ProductDealDay icon={RiNumber4} label="Product Name" />
-                                <ProductDealDay icon={RiNumber5} label="Product Name" />
+                                <ProductDealDay icon={RiNumber1} label="Product 1" />
+                                <ProductDealDay icon={RiNumber2} label="Product 2" />
+                                <ProductDealDay icon={RiNumber3} label="Product 3" />
+                                <ProductDealDay icon={RiNumber4} label="Product 4" />
+                                <ProductDealDay icon={RiNumber5} label="Product 5" />
                             </div>
                         </div>
                     </div>
@@ -96,10 +96,8 @@ const Home = () => {
 
             {/* Products */}
             <section className="max-w-screen-2xl mx-auto sm:py-3 sm:px-4  lg:px-0">
-
                 <div className="flex py-3 justify-between items-center mb-3">
                     <h3 className="text-md font-bold">New Arrivals</h3>
-
                     <a href="http://" className="">See All</a>
                 </div>
                 <div className="flex">
