@@ -20,12 +20,9 @@ Filipe@948
 
 ## alguns section que posso usar https://html.themexriver.com/bixol/bixol/index-2.html
 
-
-
 ## animação
 ### https://gramentheme.com/html/gratech/index-2.html
 ### silider de cada https://freshcart-next-js-template.netlify.app/
-
 
 ## alguns website para pegar de layout
 ### https://html.themeholy.com/webteck/?storefront=envato-elements
