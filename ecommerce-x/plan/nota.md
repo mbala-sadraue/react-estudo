@@ -31,6 +31,10 @@ Filipe@948
 ### https://html.themeholy.com/webteck/?storefront=envato-elements
 ### https://html.themeholy.com/webteck/demo/home-software-company-2.html
 
+## alguns website para pegar de layout
+### https://html.themeholy.com/webteck/?storefront=envato-elements
+### https://html.themeholy.com/webteck/demo/home-software-company-2.html
+
 
 
 
