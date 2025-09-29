@@ -1,24 +1,28 @@
 import { log } from "console";
 import { Product } from "../_components/product";
+import { Suspense } from "react";
 
 
 
-export default async function OrderPage({params}: {params:Promise<any> }) {
-const {id} = await params;
-// const request = await fetch(`https://dummyjson.com/products/${id}`);
+export default async function OrderPage({ params }: { params: Promise<any> }) {
+  const { id } = await params;
+  // const request = await fetch(`https://dummyjson.com/products/${id}`);
 
-// const product: Product = await request.json();
-//   return (
-//     <div>
-//       <h1>{product.title}</h1>
-//       <p>{product.description}</p>
-//       <p>Price: ${product.price.toString()}</p>
-//       <img src={product.thumbnail} alt={product.title} />
-      
-//     </div>
-//   );
+  // const product: Product = await request.json();
+  //   return (
+  //     <div>
+  //       <h1>{product.title}</h1>
+  //       <p>{product.description}</p>
+  //       <p>Price: ${product.price.toString()}</p>
+  //       <img src={product.thumbnail} alt={product.title} />
 
-return (<div>
-  <Product id={id} />
-</div> )
+  //     </div>
+  //   );
+
+  return (
+  <div>
+  <Suspense fallback={<div>Loading...</div>}>
+      <Product id={id} />
+  </Suspense>
+  </div>)
 }
