@@ -3,30 +3,15 @@
 import { Metadata } from "next";
 import  Link  from "next/link";
 import React, { use, useEffect } from "react";
+import { ProductsResponse, ProductType } from "../types/product";
 
-export interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: Number;
-    thumbnail:string; 
-    
-}
-interface ProdutsResponse {
-    products: Product[];
- }
-// export const  metadata:Metadata ={
-// title:'order page',
-// description:'pagina de pedidos',
-
-// }
 const OrdersPage = () => {
 'use client'
-    const [products, setProducts] = React.useState<Product[]>([]);
+    const [products, setProducts] = React.useState<ProductType[]>([]);
     useEffect(() => {
         const fetchProducts = async () => {
             const response = await fetch('https://dummyjson.com/products');
-            const data: ProdutsResponse = await response.json();
+            const data: ProductsResponse = await response.json();
             setProducts(data.products);
         };
         fetchProducts();
