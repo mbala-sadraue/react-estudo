@@ -15,21 +15,21 @@ function App() {
 
   return (
     <div className='with-400'>
-        {/* <FilterableProdutTable />*/}
+      {/* <FilterableProdutTable />*/}
 
-        {/*<Card/>
+      {/*<Card/>
             <Card/>
             <MyButton option={{disabled:'Ola', des:'teste'}}> clicque </MyButton>
 */}
 
-        {/*<TodoApp />*/}
-        {/*<AddInteractivity/>*/}
+      {/*<TodoApp />*/}
+      {/*<AddInteractivity/>*/}
 
-        {/*<FeedApp />*/}
-        {/*<UseRefApp></UseRefApp>*/}
-        {/*<UseReducerApp/>*/}
-        {/*<ContextAPI />*/}
-        <RouterApp/>
+      {/*<FeedApp />*/}
+      {/*<UseRefApp></UseRefApp>*/}
+      {/*<UseReducerApp/>*/}
+      {/*<ContextAPI />*/}
+      <RouterApp />
     </div>
   )
 }
