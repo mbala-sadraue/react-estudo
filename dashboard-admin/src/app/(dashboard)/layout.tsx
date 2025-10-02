@@ -26,44 +26,48 @@ export default function DashboardAdminPage({ children }: { children: React.React
                     </div>
                 </aside>
 
-                
-                  {/* Main Content */}
-      <div className="ml-64">
-        {/* Header */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-          <div className="flex items-center justify-between px-8 py-4">
-            {/* Search */}
-            <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-lg w-96">
-              <Search className="w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search..."
-                className="bg-transparent outline-none w-full"
-              />
-            </div>
 
-            {/* User Actions */}
-            <div className="flex items-center gap-4">
-              <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <Bell className="w-6 h-6 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-              
-              <div className="flex items-center gap-3 pl-4 border-l">
-                <img
-                  src="https://avatar.iran.liara.run/public"
-                  alt="User"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <p className="font-medium text-sm">Admin User</p>
-                  <p className="text-xs text-gray-500">admin@dashboard.com</p>
+                {/* Main Content */}
+                <div className="ml-64">
+                    {/* Header */}
+                    <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+                        <div className="flex items-center justify-between px-8 py-4">
+                            {/* Search */}
+                            <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-lg w-96">
+                                <Search className="w-5 h-5 text-gray-400" />
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    className="bg-transparent outline-none w-full"
+                                />
+                            </div>
+
+                            {/* User Actions */}
+                            <div className="flex items-center gap-4">
+                                <button className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                    <Bell className="w-6 h-6 text-gray-600" />
+                                    <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                                </button>
+
+                                <div className="flex items-center gap-3 pl-4 border-l">
+                                    <img
+                                        src="https://avatar.iran.liara.run/public"
+                                        alt="User"
+                                        className="w-10 h-10 rounded-full"
+                                    />
+                                    <div>
+                                        <p className="font-medium text-sm">Admin User</p>
+                                        <p className="text-xs text-gray-500">admin@dashboard.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    {/* Page Content */}
+                    <main className="p-8">
+                        {children}
+                    </main>
                 </div>
-              </div>
-            </div>
-          </div>
-        </header>
-        </div>
             </div>
         </div >
     )

@@ -44,3 +44,9 @@ export interface AuthUser {
     token: string;
     refreshToken: string;
 }
+export interface PaginatedResponse<T>{
+    [key: string]: T[];
+    // total: number;
+    // skip: number;
+    // limit: number;
+}
