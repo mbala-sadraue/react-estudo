@@ -18,8 +18,11 @@ export default function DashboardAdminPage({ children }: { children: React.React
                         <NavLink href="/dashboard/users" icon={<Users className="w-4 h-4" />}  >Users</NavLink>
                         <NavLink href="/dashboard/posts" icon={<FileText className="w-4 h-4" />}  >Posts</NavLink>
                     </nav>
-                    <div className="absolutebo border-t border-gray-200">
-
+                    <div className="absolute bottom-0 border-t border-gray-200 w-full">
+                       <button className="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                        <LogOut className="w-4 h-4 mr-2" />
+                        <span>Logout</span>
+                       </button>
                     </div>
 
 
