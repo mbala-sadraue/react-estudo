@@ -46,7 +46,7 @@ export interface AuthUser {
 }
 export interface PaginatedResponse<T>{
     [key: string]: T[];
-    // total: number;
-    // skip: number;
-    // limit: number;
+    total: number;
+    skip: number;
+    limit: number;
 }

@@ -15,3 +15,9 @@ export async function getDashboardStats() {
        
     };
 }
+
+export async function searchProducts(query: string): Promise<PaginatedResponse<Product>> {
+  const res = await fetch(`${API_URL}products/search?q=${query}`);
+  if (!res.ok) throw new Error('Failed to search products');
+  return res.json();
+}

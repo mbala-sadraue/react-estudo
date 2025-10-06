@@ -1,8 +1,9 @@
-import { getProducts } from "@/lib/api";
+import { getProducts, searchProducts } from "@/lib/api";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import ProductsClient from "./ProductsClient";
 import { log } from "console";
+import { PaginatedResponse, Product } from "@/types";
 
 interface PageProps {
     searchParams: {
@@ -12,24 +13,34 @@ interface PageProps {
     };
 }
 export default async function Page({ searchParams }: PageProps) {
-const categories: string[] = ["smartphones", "laptops", "fragrances", "skincare", "groceries", "home-decoration", "furniture", "tops", "womens-dresses", "womens-shoes", "mens-shirts", "mens-shoes", "mens-watches", "womens-watches", "womens-bags", "womens-jewellery", "sunglasses", "automotive", "motorcycle", "lighting"];
+const resolvedSearchParams = await Promise.resolve(searchParams);
+    const categories: string[] = ["smartphones", "laptops", "fragrances", "skincare", "groceries", "home-decoration", "furniture", "tops", "womens-dresses", "womens-shoes", "mens-shirts", "mens-shoes", "mens-watches", "womens-watches", "womens-bags", "womens-jewellery", "sunglasses", "automotive", "motorcycle", "lighting"];
+    let productsData: PaginatedResponse<Product>;
 // const queryParams = searchParams   
 // const page = Number( searchParams?.page) || 1;
-const searchParam = searchParams?.search || '';
-const page = parseInt(searchParams?.page || '1') || 1;
-const categoryParam = searchParams?.category || '';
+const searchParam = resolvedSearchParams?.search || '';
+const page = parseInt(resolvedSearchParams?.page || '1') || 1;
+const categoryParam = resolvedSearchParams?.category || '';
 
-log( searchParam);
     const limit = 12;
-    // const skip = (page - 1) * limit;
-    const skip = 1;
+    const skip = (page - 1) * limit;
+console.log(searchParam.trim() === '');
 
+if(searchParam && searchParam.trim() !== ''){
+   productsData = await searchProducts(searchParam);
+}else{
     // Fetch data
-    const [productsData] = await Promise.all([
+     [productsData] = await Promise.all([
         getProducts(limit, skip),
         // getCategories()
     ]);
 
+}
+
+    log('Products Data:', productsData.total);
+
+    // Calculate total pages
+    const totalPages = Math.ceil(productsData.total / limit);
     return (
         <div className="space-y-8">
             {/* Header */}
@@ -53,9 +64,9 @@ log( searchParam);
                 initialProducts={productsData.products}
                 categories={categories}
                 currentPage={page}
-                totalPages={1}
-                searchQuery={searchParams.search || ''}
-                selectedCategory={searchParams.category || ''}
+                totalPages={totalPages}
+                searchQuery={searchParam || ''}
+                selectedCategory={categoryParam || ''}
             />
         </div>
     )
