@@ -1,4 +1,4 @@
-import { PaginatedResponse, Product } from "@/types";
+import { Category, PaginatedResponse, Product } from "@/types";
 import { log } from "console";
 
 const API_URL = 'https://dummyjson.com/'
@@ -23,8 +23,14 @@ export async function searchProducts(query: string): Promise<PaginatedResponse<P
 }
 
 
-export async function getCategories(){
+export async function getCategories(): Promise<Category[]> {
     const response = await fetch(`${API_URL}products/categories`);
     if (!response.ok) throw new Error('Failed to fetch categories');
     return response.json();
+}
+
+export async function getProductsByCategory(category: string): Promise<PaginatedResponse<Product>> {
+  const res = await fetch(`${API_URL}products/category/${category}`);
+  if (!res.ok) throw new Error('Failed to fetch products');
+  return res.json();
 }

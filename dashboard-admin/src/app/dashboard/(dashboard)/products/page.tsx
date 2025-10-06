@@ -1,4 +1,4 @@
-import { getCategories, getProducts, searchProducts } from "@/lib/api";
+import { getCategories, getProducts, getProductsByCategory, searchProducts } from "@/lib/api";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import ProductsClient from "./ProductsClient";
@@ -23,9 +23,19 @@ export default async function Page({ searchParams }: PageProps) {
     const limit = 12;
     const skip = (page - 1) * limit;
 
-    if (searchParam && searchParam.trim() !== '') {
+    if (categoryParam) {
+        [productsData, categories] = await Promise.all([
+            getProductsByCategory(categoryParam),
+            getCategories()
+        ]);
+    } else if (searchParam && searchParam.trim() !== '') {
          [productsData, categories] = await Promise.all([
             searchProducts(searchParam),
+            getCategories()
+        ]);
+    } else if (categoryParam) {
+        [productsData, categories] = await Promise.all([
+            getProductsByCategory(categoryParam),
             getCategories()
         ]);
     } else {
