@@ -2,6 +2,7 @@ import { getProducts } from "@/lib/api";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import ProductsClient from "./ProductsClient";
+import { log } from "console";
 
 interface PageProps {
     searchParams: {
@@ -12,9 +13,16 @@ interface PageProps {
 }
 export default async function Page({ searchParams }: PageProps) {
 const categories: string[] = ["smartphones", "laptops", "fragrances", "skincare", "groceries", "home-decoration", "furniture", "tops", "womens-dresses", "womens-shoes", "mens-shirts", "mens-shoes", "mens-watches", "womens-watches", "womens-bags", "womens-jewellery", "sunglasses", "automotive", "motorcycle", "lighting"];
-    const page = Number(searchParams.page) || 1;
+// const queryParams = searchParams   
+// const page = Number( searchParams?.page) || 1;
+const searchParam = searchParams?.search || '';
+const page = parseInt(searchParams?.page || '1') || 1;
+const categoryParam = searchParams?.category || '';
+
+log( searchParam);
     const limit = 12;
-    const skip = (page - 1) * limit;
+    // const skip = (page - 1) * limit;
+    const skip = 1;
 
     // Fetch data
     const [productsData] = await Promise.all([
