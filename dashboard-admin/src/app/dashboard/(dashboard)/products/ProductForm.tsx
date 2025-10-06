@@ -6,9 +6,9 @@ import { useState } from "react";
 interface ProductFormProps {
 
     product?: Product;
-    catetories?: Category;
+    categories: Category[];
 }
-export default function ProductForm({ product }: ProductFormProps) {
+export default function ProductForm({ product,categories }: ProductFormProps) {
 
     const [formData, setFormData] = useState({
         title: product?.title || '',
@@ -92,6 +92,25 @@ export default function ProductForm({ product }: ProductFormProps) {
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                                     placeholder="Enter brand name"
                                 />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Category *
+                                </label>
+                                <select
+                                    name="category"
+                                    value={formData.category}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                >
+                                    <option value="">Select category</option>
+                                    {categories.map((cat: Category) => (
+                                        <option key={cat.name} value={cat.name}>
+                                            {cat.name.charAt(0).toUpperCase() + cat.name.slice(1)}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                         </div>
 
