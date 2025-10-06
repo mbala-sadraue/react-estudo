@@ -1,9 +1,8 @@
-import { getProducts, searchProducts } from "@/lib/api";
+import { getCategories, getProducts, searchProducts } from "@/lib/api";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import ProductsClient from "./ProductsClient";
-import { log } from "console";
-import { PaginatedResponse, Product } from "@/types";
+import { PaginatedResponse, Product ,Category} from "@/types";
 
 interface PageProps {
     searchParams: {
@@ -13,31 +12,31 @@ interface PageProps {
     };
 }
 export default async function Page({ searchParams }: PageProps) {
-const resolvedSearchParams = await Promise.resolve(searchParams);
-    const categories: string[] = ["smartphones", "laptops", "fragrances", "skincare", "groceries", "home-decoration", "furniture", "tops", "womens-dresses", "womens-shoes", "mens-shirts", "mens-shoes", "mens-watches", "womens-watches", "womens-bags", "womens-jewellery", "sunglasses", "automotive", "motorcycle", "lighting"];
-    let productsData: PaginatedResponse<Product>;
-// const queryParams = searchParams   
-// const page = Number( searchParams?.page) || 1;
-const searchParam = resolvedSearchParams?.search || '';
-const page = parseInt(resolvedSearchParams?.page || '1') || 1;
-const categoryParam = resolvedSearchParams?.category || '';
+    const resolvedSearchParams = await Promise.resolve(searchParams);
+    let categories: Category[] = [];
+      let productsData: PaginatedResponse<Product>;
+
+    const searchParam = resolvedSearchParams?.search || '';
+    const page = parseInt(resolvedSearchParams?.page || '1') || 1;
+    const categoryParam = resolvedSearchParams?.category || '';
 
     const limit = 12;
     const skip = (page - 1) * limit;
-console.log(searchParam.trim() === '');
 
-if(searchParam && searchParam.trim() !== ''){
-   productsData = await searchProducts(searchParam);
-}else{
-    // Fetch data
-     [productsData] = await Promise.all([
-        getProducts(limit, skip),
-        // getCategories()
-    ]);
+    if (searchParam && searchParam.trim() !== '') {
+         [productsData, categories] = await Promise.all([
+            searchProducts(searchParam),
+            getCategories()
+        ]);
+    } else {
+        // Fetch data
+        [productsData, categories] = await Promise.all([
+            getProducts(limit, skip),
+            getCategories()
+        ]);
 
-}
+    }
 
-    log('Products Data:', productsData.total);
 
     // Calculate total pages
     const totalPages = Math.ceil(productsData.total / limit);

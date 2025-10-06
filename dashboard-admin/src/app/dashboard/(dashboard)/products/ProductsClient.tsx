@@ -1,13 +1,13 @@
 "use client"
 
-import { Product } from "@/types";
+import { Category, Product } from "@/types";
 import { Edit, Eye, Filter, Link, Search, Trash2 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/dist/client/components/navigation";
 import { useState } from "react";
 
 interface Props {
   initialProducts: Product[];
-  categories: string[];
+  categories: Category[];
   currentPage: number;
   totalPages: number;
   searchQuery: string;
@@ -86,8 +86,8 @@ export default function ProductsClient({
             >
               <option value="">All Categories</option>
               {categories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                <option key={cat.name} value={cat.name}>
+                  {cat.name.charAt(0).toUpperCase() + cat.name.slice(1)}
                 </option>
               ))}
             </select>

@@ -21,3 +21,10 @@ export async function searchProducts(query: string): Promise<PaginatedResponse<P
   if (!res.ok) throw new Error('Failed to search products');
   return res.json();
 }
+
+
+export async function getCategories(){
+    const response = await fetch(`${API_URL}products/categories`);
+    if (!response.ok) throw new Error('Failed to fetch categories');
+    return response.json();
+}
