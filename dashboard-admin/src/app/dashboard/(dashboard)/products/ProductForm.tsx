@@ -1,6 +1,6 @@
 'use client';
 
-import { createProduct } from "@/lib/api";
+import { createProduct, editProduct } from "@/lib/api";
 import { Category, Product } from "@/types";
 import { Save, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -29,25 +29,25 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        setLoading(true);
-        const productData: Partial<Product> = {
-            title: formData.title,
-            description: formData.description,
-            price: formData.price,
-            discountPercentage: formData.discountPercentage,
-            stock: formData.stock,
-            brand: formData.brand,
-            category: formData.category,
-            thumbnail: formData.thumbnail,
-        };
-        const response = await createProduct(productData);
-        console.log('Product created:', response);
-        setLoading(false);
+        try {
+            setLoading(true);
+            if (product) {
+                 const response = await editProduct(product.id!, formData); 
+                console.log('Product updated:', response);
+
+            } else {
+                const response = await createProduct(formData);
+                console.log('Product created:', response);
+            }
+            setLoading(false);
+        } catch (error) {
+            console.log('Error creating product:', error);
+            setLoading(false);
+        }
+
 
     }
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
-        console.log('e', e.target);
-
         const { name, value } = e.target;
 
         setFormData((prev) => ({
@@ -285,3 +285,4 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
         </form>
     );
 }
+
