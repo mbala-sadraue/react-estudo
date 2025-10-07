@@ -1,0 +1,76 @@
+import { Category, PaginatedResponse, Product } from "@/types";
+import { log } from "console";
+
+const API_URL = 'https://dummyjson.com/'
+export async function getProducts(limit = 30, skip = 0): Promise<PaginatedResponse<Product>> {
+  const response = await fetch(`${API_URL}products?limit=${limit}&skip=${skip}`);
+  const data = await response.json();
+  return data;
+}
+
+export async function getProductById(id: number): Promise<Product> {
+  const response = await fetch(`${API_URL}products/${id}`);
+  if (!response.ok) throw new Error('Failed to fetch product');
+  return response.json();
+}
+
+export async function getDashboardStats() {
+  const products = await getProducts(0, 0);
+  return {
+    totalProducts: products.total,
+
+  };
+}
+
+export async function searchProducts(query: string): Promise<PaginatedResponse<Product>> {
+  const res = await fetch(`${API_URL}products/search?q=${query}`);
+  if (!res.ok) throw new Error('Failed to search products');
+  return res.json();
+}
+
+
+export async function getCategories(): Promise<Category[]> {
+  const response = await fetch(`${API_URL}products/categories`);
+  if (!response.ok) throw new Error('Failed to fetch categories');
+  return response.json();
+}
+
+export async function getProductsByCategory(category: string): Promise<PaginatedResponse<Product>> {
+  const res = await fetch(`${API_URL}products/category/${category}`);
+  if (!res.ok) throw new Error('Failed to fetch products');
+  return res.json();
+}
+
+export async function createProduct(data: any): Promise<any> {
+  const response = await fetch(`${API_URL}products/add`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+      ,
+    },
+    body: JSON.stringify(data)
+
+  })
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || 'Failed to create product');
+  }
+  return response.json();
+}
+
+
+export async function editProduct(id: number, data: any): Promise<Product> {
+  const response = await fetch(`${API_URL}products/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || 'Failed to update product');
+  }
+  return response.json();
+}
+
