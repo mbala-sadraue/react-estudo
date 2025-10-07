@@ -34,3 +34,24 @@ export async function getProductsByCategory(category: string): Promise<Paginated
   if (!res.ok) throw new Error('Failed to fetch products');
   return res.json();
 }
+
+export async function createProduct(data: Partial<Product>): Promise<any> {
+
+  const response = await fetch(`${API_URL}products/add`, {
+    method:'POST',
+    headers: {
+      'content-type': 'application/json'
+      ,
+    },
+    body: JSON.stringify(data)
+
+  })
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || 'Failed to create product');
+  }
+  return response.json();
+  
+  
+ }
+   

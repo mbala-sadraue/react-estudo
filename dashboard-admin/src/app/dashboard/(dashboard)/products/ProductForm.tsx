@@ -1,5 +1,6 @@
 'use client';
 
+import { createProduct } from "@/lib/api";
 import { Category, Product } from "@/types";
 import { Save, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -26,9 +27,23 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
     })
     const route = useRouter()
 
-    function handleSubmit(e: React.FormEvent) {
+    async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        console.log('formData', formData);
+        setLoading(true);
+        const productData: Partial<Product> = {
+            title: formData.title,
+            description: formData.description,
+            price: formData.price,
+            discountPercentage: formData.discountPercentage,
+            stock: formData.stock,
+            brand: formData.brand,
+            category: formData.category,
+            thumbnail: formData.thumbnail,
+        };
+        const response = await createProduct(productData);
+        console.log('Product created:', response);
+        setLoading(false);
+
     }
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
         console.log('e', e.target);
