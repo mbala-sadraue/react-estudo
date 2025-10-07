@@ -1,6 +1,7 @@
 'use client';
 
 import { Category, Product } from "@/types";
+import { Save, Upload, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 interface ProductFormProps {
@@ -8,7 +9,9 @@ interface ProductFormProps {
     product?: Product;
     categories: Category[];
 }
-export default function ProductForm({ product,categories }: ProductFormProps) {
+export default function ProductForm({ product, categories }: ProductFormProps) {
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const [formData, setFormData] = useState({
         title: product?.title || '',
@@ -195,6 +198,71 @@ export default function ProductForm({ product,categories }: ProductFormProps) {
                             </div>
                         )}
 
+
+                        {/* Sidebar - 1 column */}
+                        <div className="space-y-6">
+                            {/* Image Upload */}
+                            <div className="bg-white rounded-lg shadow p-6 space-y-4">
+                                <h2 className="text-xl font-semibold text-gray-900">Product Image</h2>
+
+                                <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3">
+                                        <img
+                                            src={formData.thumbnail}
+                                            alt="Preview"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                                            Image URL
+                                        </label>
+                                        <input
+                                            type="url"
+                                            name="thumbnail"
+                                            value={formData.thumbnail}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm"
+                                            placeholder="https://example.com/image.jpg"
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        className="w-full mt-3 flex items-center justify-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                                    >
+                                        <Upload className="w-4 h-4" />
+                                        <span className="text-sm">Upload Image</span>
+                                    </button>
+                                </div>
+
+                                <p className="text-xs text-gray-500">
+                                    Recommended: 800x800px, Max 5MB
+                                </p>
+                            </div>
+
+                        </div>
+                        {/* Actions */}
+                        <div className="bg-white rounded-lg shadow p-6 space-y-3">
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                            >
+                                <Save className="w-5 h-5" />
+                                {loading ? 'Saving...' : product ? 'Update Product' : 'Create Product'}
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={() => router.back()}
+                                className="w-full flex items-center justify-center gap-2 bg-gray-100 text-gray-700 px-4 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+                            >
+                                <X className="w-5 h-5" />
+                                Cancel
+                            </button>
+                        </div>
 
                     </div>
                 </div>
